@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AthleteLift - Supporting Dreams</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #1d4ed8;
+            --accent: #3b82f6;
+            --background: #f8fafc;
+            --text: #1e293b;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --error: #ef4444;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 4rem;
+            padding: 6rem 2rem;
+            background: linear-gradient(rgba(37,99,235,0.1), rgba(37,99,235,0.05));
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Athletes Section */
+        .athletes {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .athletes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+
+        .athlete-card {
+            background: var(--background);
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .athlete-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .athlete-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .athlete-info {
+            padding: 1.5rem;
+        }
+
+        /* Forms */
+        .form-container {
+            max-width: 500px;
+            margin: 8rem auto 4rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Footer */
+        .footer {
+            background: white;
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #64748b;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .features-grid, .athletes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="logo">AthleteLift</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#athletes">Athletes</a></li>
+                <li><a href="#support">Support</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button class="btn btn-outline" onclick="openLoginModal()">Login</button>
+                <button class="btn btn-primary" onclick="openRegisterModal()">Register</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content animate-fade-in">
+            <h1>Empowering Athletes, Enriching Dreams</h1>
+            <p>Connect talented athletes with supporters who believe in their potential. Together, we can build a stronger sporting future for India.</p>
+            <button class="btn btn-primary">Get Started</button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2 class="text-center">How It Works</h2>
+        <div class="features-grid">
+            <div class="feature-card animate-fade-in">
+                <div class="feature-icon">🏃</div>
+                <h3>Athlete Profiles</h3>
+                <p>Create detailed profiles showcasing your achievements, goals, and funding needs.</p>
+            </div>
+            <div class="feature-card animate-fade-in">
+                <div class="feature-icon">🤝</div>
+                <h3>Connect with Sponsors</h3>
+                <p>Match with potential sponsors who believe in your journey and want to support your success.</p>
+            </div>
+            <div class="feature-card animate-fade-in">
+                <div class="feature-icon">📈</div>
+                <h3>Track Progress</h3>
+                <p>Monitor training milestones, competition results, and funding allocation transparently.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Athletes Section -->
+    <section class="athletes" id="athletes">
+        <h2 class="text-center">Featured Athletes</h2>
+        <div class="athletes-grid">
+            <!-- Athletes cards will be dynamically populated -->
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="form-container">
+            <h2>Login to Your Account</h2>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-input" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Registration Modal -->
+    <div id="registerModal" class="modal">
+        <div class="form-container">
+            <h2>Create New Account</h2>
+            <form id="registerForm" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Account Type</label>
+                    <select class="form-input" required>
+                        <option value="athlete">Athlete</option>
+                        <option value="sponsor">Sponsor</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AthleteLift</h3>
+                <p>Supporting underprivileged athletes across India to achieve their dreams.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#athletes">Athletes</a></li>
+                    <li><a href="#support">Support</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li>Email: support@athletelift.com</li>
+                    <li>Phone: +91 123 456 7890</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sample athlete data
+        const athletes = [
+            {
+                name: 'Rajesh Kumar',
+                sport: 'Football',
+                location: 'Bihar',
+                story: 'Rising football talent from rural Bihar seeking support for national trials.',
+                image: '/api/placeholder/250/200'
+            },
+            {
+                name: 'Priya Singh',
+                sport: 'Athletics',
+                location: 'Uttar Pradesh',
+                story: 'State-level sprinter aiming for national championship qualification.',
+                image: '/api/placeholder/250/200'
+            },
+            {
+                name: 'Mohammed Rizwan',
+                sport: 'Boxing',
+                location: 'Kerala',
+                story: 'Young boxing prodigy needs support for international tournament preparation.',
+                image: '/api/placeholder/250/200'
+            }
+        ];
+
+        // Populate athletes section
+        function populateAthletes() {
+            const athletesGrid = document.querySelector('.athletes-grid');
+            athletes.forEach(athlete => {
+                const card = document.createElement('div');
+                card.className = 'athlete-card animate-fade-in';
+                card.innerHTML = `
+                    <img src="${athlete.image}" alt="${athlete.name}" class="athlete-img">
+                    <div class="athlete-info">
+                        <h3>${athlete.name}</h3>
+                        <p><strong>${athlete.sport}</strong> | ${athlete.location}</p>
+                        <p>${athlete.story}</p>
+                        <button class="btn btn-primary">Support Now</button>
+                    </div>
+                `;
+                athletesGrid.appendChild(card);
+            });
+        }
+
+        // Modal functionality
+        function openLoginModal() {
+            document.getElementById('loginModal').style.display = 'block';
+        }
+
+        function openRegisterModal() {
+            document.getElementById('registerModal').style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Form handlers
+        function handleLogin(event) {
+            event.preventDefault();
+            const form = event.target;
+            const email = form.querySelector('input[type="email"]').value;
+            const password = form.querySelector('input[type="password"]').value;
+            
+            // Add login logic here
+            console.log('Login attempt:', { email, password });
+            closeModal('loginModal');
+        }
+
+        function handleRegister(event) {
+            event.preventDefault();
+            const form = event.target;
+            const name = form.querySelector('input[type="text"]').value;
+            const email = form.querySelector('input[type="email"]').value;
+            const password = form.querySelector('input[type="password"]').value;
+            const accountType = form.querySelector('select').value;
+            
+            // Add registration logic here
+            console.log('Registration:', { name, email, password, accountType });
+            closeModal('registerModal');
+        }
+
+        // Scroll animations
+        function handleScrollAnimations() {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                
+                if (elementTop < window.innerHeight && elementBottom > 0) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            populateAthletes();
+            window.addEventListener('scroll', handleScrollAnimations);
+            handleScrollAnimations(); // Initial check
+        });
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = 'none';
+            }
+        }
+
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form validation
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            form.addEventListener('submit', function(event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            });
+        });
+
+        // Add loading states to buttons
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.classList.contains('loading')) return;
+                
+                const originalText = this.textContent;
+                this.classList.add('loading');
+                this.textContent = 'Loading...';
+                
+                setTimeout(() => {
+                    this.classList.remove('loading');
+                    this.textContent = originalText;
+                }, 1500);
+            });
+        });
+
+        // Add mobile menu toggle
+        const mobileMenuButton = document.createElement('button');
+        mobileMenuButton.className = 'mobile-menu-button';
+        mobileMenuButton.innerHTML = '☰';
+        document.querySelector('.nav-content').prepend(mobileMenuButton);
+
+        mobileMenuButton.addEventListener('click', () => {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Add search functionality
+        function searchAthletes(query) {
+            const filteredAthletes = athletes.filter(athlete => 
+                athlete.name.toLowerCase().includes(query.toLowerCase()) ||
+                athlete.sport.toLowerCase().includes(query.toLowerCase()) ||
+                athlete.location.toLowerCase().includes(query.toLowerCase())
+            );
+            
+            const athletesGrid = document.querySelector('.athletes-grid');
+            athletesGrid.innerHTML = '';
+            
+            if (filteredAthletes.length === 0) {
+                athletesGrid.innerHTML = '<p>No athletes found matching your search.</p>';
+                return;
+            }
+            
+            filteredAthletes.forEach(athlete => {
+                // Reuse athlete card creation logic
+                const card = document.createElement('div');
+                card.className = 'athlete-card animate-fade-in';
+                card.innerHTML = `
+                    <img src="${athlete.image}" alt="${athlete.name}" class="athlete-img">
+                    <div class="athlete-info">
+                        <h3>${athlete.name}</h3>
+                        <p><strong>${athlete.sport}</strong> | ${athlete.location}</p>
+                        <p>${athlete.story}</p>
+                        <button class="btn btn-primary">Support Now</button>
+                    </div>
+                `;
+                athletesGrid.appendChild(card);
+            });
+        }
+
+        // Add error handling
+        window.onerror = function(msg, url, lineNo, columnNo, error) {
+            console.error('Error: ', msg, '\nURL: ', url, '\nLine: ', lineNo, '\nColumn: ', columnNo, '\nError object: ', error);
+            return false;
+        };
+
+        // Add progress tracking (mock functionality)
+        class ProgressTracker {
+            constructor(athleteId) {
+                this.athleteId = athleteId;
+                this.milestones = [];
+            }
+
+            addMilestone(milestone) {
+                this.milestones.push({
+                    ...milestone,
+                    date: new Date(),
+                    completed: false
+                });
+            }
+
+            completeMilestone(index) {
+                if (this.milestones[index]) {
+                    this.milestones[index].completed = true;
+                }
+            }
+
+            getProgress() {
+                const completed = this.milestones.filter(m => m.completed).length;
+                return (completed / this.milestones.length) * 100;
+            }
+        }
+
+        // Add notification system
+        class NotificationSystem {
+            constructor() {
+                this.notifications = [];
+                this.container = document.createElement('div');
+                this.container.className = 'notification-container';
+                document.body.appendChild(this.container);
+            }
+
+            show(message, type = 'info') {
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                notification.textContent = message;
+                
+                this.container.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.remove();
+                }, 3000);
+            }
+        }
+
+        const notifications = new NotificationSystem();
+
+        // Initialize the application
+        function initializeApp() {
+            populateAthletes();
+            handleScrollAnimations();
+            
+            // Add notification test
+            setTimeout(() => {
+                notifications.show('Welcome to AthleteLift! 🎉', 'success');
+            }, 1000);
+        }
+
+        initializeApp();
+    </script>
+</body>
+</html>

@@ -3,703 +3,393 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AthleteLift - Supporting Dreams</title>
+    <title>Physics Exam Success Wishes</title>
     <style>
-        /* Reset and Base Styles */
-        * {
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            background-color: #f5f6fa;
+            overflow-x: hidden;
         }
-
-        :root {
-            --primary: #2563eb;
-            --secondary: #1d4ed8;
-            --accent: #3b82f6;
-            --background: #f8fafc;
-            --text: #1e293b;
-            --success: #22c55e;
-            --warning: #f59e0b;
-            --error: #ef4444;
-        }
-
-        body {
-            background-color: var(--background);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        /* Navigation Styles */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: white;
-            padding: 1rem 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-
-        .nav-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .auth-buttons {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .btn {
-            padding: 0.5rem 1.5rem;
-            border-radius: 0.5rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background: var(--secondary);
-        }
-
-        .btn-outline {
-            border: 2px solid var(--primary);
-            background: transparent;
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Hero Section */
-        .hero {
-            margin-top: 4rem;
-            padding: 6rem 2rem;
-            background: linear-gradient(rgba(37,99,235,0.1), rgba(37,99,235,0.05));
-            text-align: center;
-        }
-
-        .hero-content {
+        
+        .container {
             max-width: 800px;
             margin: 0 auto;
+            padding: 20px;
         }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: var(--text);
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-
-        .hero p {
+        
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
             font-size: 1.2rem;
-            color: #64748b;
-            margin-bottom: 2rem;
+            margin-top: 10px;
+            opacity: 0.9;
         }
-
-        /* Features Section */
-        .features {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
+        
+        .main-content {
             background: white;
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
         }
-
-        .feature-card:hover {
+        
+        .card {
+            background: var(--light-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
-
-        .feature-icon {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
+        
+        .card h2 {
+            color: var(--primary-color);
+            margin-top: 0;
         }
-
-        /* Athletes Section */
-        .athletes {
-            padding: 4rem 2rem;
-            background: white;
+        
+        .quote-section {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            margin: 30px 0;
+            text-align: center;
+            padding: 0 20px;
         }
-
-        .athletes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 3rem auto 0;
-        }
-
-        .athlete-card {
-            background: var(--background);
-            border-radius: 1rem;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-        .athlete-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .athlete-img {
+        
+        .floating-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
         }
-
-        .athlete-info {
-            padding: 1.5rem;
+        
+        .countdown {
+            font-size: 1.5rem;
+            text-align: center;
+            color: var(--dark-color);
+            margin: 30px 0;
+            font-weight: bold;
         }
-
-        /* Forms */
-        .form-container {
-            max-width: 500px;
-            margin: 8rem auto 4rem;
-            padding: 2rem;
-            background: white;
-            border-radius: 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        
+        .physics-icon {
+            display: inline-block;
+            margin: 0 5px;
+            animation: pulse 2s infinite;
         }
-
-        .form-group {
-            margin-bottom: 1.5rem;
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
-
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text);
-            font-weight: 500;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.5rem;
+        
+        button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
             font-size: 1rem;
-            transition: border-color 0.3s;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-
-        .form-input:focus {
-            outline: none;
-            border-color: var(--primary);
+        
+        button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
-
-        /* Footer */
-        .footer {
-            background: white;
-            padding: 4rem 2rem;
-            margin-top: 4rem;
+        
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: var(--dark-color);
+            font-size: 0.9rem;
         }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 10;
+            justify-content: center;
+            align-items: center;
         }
-
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            color: var(--text);
+        
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: modalOpen 0.4s forwards;
         }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-links a {
-            color: #64748b;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+        
+        @keyframes modalOpen {
+            from { opacity: 0; transform: translateY(-50px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
-        .animate-fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
+        
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--accent-color);
         }
-
-        /* Responsive Design */
+        
+        .success-tips {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .success-tips li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .success-tips li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Animation for the elements */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+        
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            h1 {
+                font-size: 2rem;
             }
-
-            .hero h1 {
-                font-size: 2.5rem;
+            .container {
+                padding: 10px;
             }
-
-            .features-grid, .athletes-grid {
-                grid-template-columns: 1fr;
+            .main-content {
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-content">
-            <a href="/" class="logo">AthleteLift</a>
-            <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#athletes">Athletes</a></li>
-                <li><a href="#support">Support</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-            <div class="auth-buttons">
-                <button class="btn btn-outline" onclick="openLoginModal()">Login</button>
-                <button class="btn btn-primary" onclick="openRegisterModal()">Register</button>
+    <div class="floating-particles" id="particles"></div>
+    
+    <header>
+        <h1>Physics Exam Success Wishes</h1>
+        <p class="subtitle">You've got this! Believe in yourself!</p>
+    </header>
+    
+    <div class="container">
+        <div class="main-content fade-in">
+            <div class="countdown" id="countdown">Countdown to Success</div>
+            
+            <div class="card fade-in">
+                <h2><span class="physics-icon">⚛️</span> Believe in Your Potential</h2>
+                <p>Hey! Just wanted to let you know that you're going to absolutely crush this physics exam! You've been working so hard, and all that dedication is about to pay off. Remember that you know more than you think you do. Take a deep breath, stay focused, and show that exam who's boss!</p>
+            </div>
+            
+            <div class="quote-section fade-in">
+                "The most beautiful thing we can experience is the mysterious. It is the source of all true art and science." - Albert Einstein
+            </div>
+            
+            <div class="card fade-in">
+                <h2><span class="physics-icon">🔬</span> You're Fully Prepared</h2>
+                <p>All those hours of studying, all those practice problems you've solved, all those concepts you've mastered - they're all coming together now. Physics might be challenging, but so are you! Your determination and intelligence will guide you through every question. I'm sending all my positive energy your way!</p>
+            </div>
+            
+            <div class="card fade-in">
+                <h2><span class="physics-icon">💡</span> One Step at a Time</h2>
+                <p>Remember to approach each problem methodically. Read carefully, identify the key concepts, draw diagrams when needed, and trust your knowledge. Don't rush - you've got this! And remember that one difficult question doesn't define your entire exam. Move on and come back to it later if needed.</p>
+            </div>
+            
+            <button id="tipButton" class="fade-in">Click for Success Tips</button>
+        </div>
+        
+        <div class="modal" id="tipModal">
+            <div class="modal-content">
+                <span class="close-modal" id="closeModal">&times;</span>
+                <h2>Physics Exam Success Tips</h2>
+                <ul class="success-tips">
+                    <li>Start with questions you're confident about to build momentum</li>
+                    <li>Draw diagrams for mechanics and wave problems</li>
+                    <li>Write down the given quantities and what you're solving for</li>
+                    <li>Check your units throughout calculations</li>
+                    <li>If stuck, try working backward from the answer choices</li>
+                    <li>Take deep breaths if you feel anxious during the exam</li>
+                    <li>Review your answers if you have time at the end</li>
+                    <li>Trust your preparation - you've worked hard for this!</li>
+                </ul>
+                <p style="margin-top: 20px;">I believe in you 100000%! You're going to do amazing!</p>
             </div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content animate-fade-in">
-            <h1>Empowering Athletes, Enriching Dreams</h1>
-            <p>Connect talented athletes with supporters who believe in their potential. Together, we can build a stronger sporting future for India.</p>
-            <button class="btn btn-primary">Get Started</button>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <h2 class="text-center">How It Works</h2>
-        <div class="features-grid">
-            <div class="feature-card animate-fade-in">
-                <div class="feature-icon">🏃</div>
-                <h3>Athlete Profiles</h3>
-                <p>Create detailed profiles showcasing your achievements, goals, and funding needs.</p>
-            </div>
-            <div class="feature-card animate-fade-in">
-                <div class="feature-icon">🤝</div>
-                <h3>Connect with Sponsors</h3>
-                <p>Match with potential sponsors who believe in your journey and want to support your success.</p>
-            </div>
-            <div class="feature-card animate-fade-in">
-                <div class="feature-icon">📈</div>
-                <h3>Track Progress</h3>
-                <p>Monitor training milestones, competition results, and funding allocation transparently.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Athletes Section -->
-    <section class="athletes" id="athletes">
-        <h2 class="text-center">Featured Athletes</h2>
-        <div class="athletes-grid">
-            <!-- Athletes cards will be dynamically populated -->
-        </div>
-    </section>
-
-    <!-- Login Modal -->
-    <div id="loginModal" class="modal">
-        <div class="form-container">
-            <h2>Login to Your Account</h2>
-            <form id="loginForm" onsubmit="handleLogin(event)">
-                <div class="form-group">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-input" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Password</label>
-                    <input type="password" class="form-input" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-            </form>
-        </div>
+        
+        <footer class="fade-in">
+            Sending you all the positive energy for your physics exam!
+        </footer>
     </div>
-
-    <!-- Registration Modal -->
-    <div id="registerModal" class="modal">
-        <div class="form-container">
-            <h2>Create New Account</h2>
-            <form id="registerForm" onsubmit="handleRegister(event)">
-                <div class="form-group">
-                    <label class="form-label">Full Name</label>
-                    <input type="text" class="form-input" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-input" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Password</label>
-                    <input type="password" class="form-input" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Account Type</label>
-                    <select class="form-input" required>
-                        <option value="athlete">Athlete</option>
-                        <option value="sponsor">Sponsor</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary">Register</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>AthleteLift</h3>
-                <p>Supporting underprivileged athletes across India to achieve their dreams.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#athletes">Athletes</a></li>
-                    <li><a href="#support">Support</a></li>
-                    <li><a href="#about">About</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <ul class="footer-links">
-                    <li>Email: support@athletelift.com</li>
-                    <li>Phone: +91 123 456 7890</li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-
+    
     <script>
-        // Sample athlete data
-        const athletes = [
-            {
-                name: 'Rajesh Kumar',
-                sport: 'Football',
-                location: 'Bihar',
-                story: 'Rising football talent from rural Bihar seeking support for national trials.',
-                image: '/api/placeholder/250/200'
-            },
-            {
-                name: 'Priya Singh',
-                sport: 'Athletics',
-                location: 'Uttar Pradesh',
-                story: 'State-level sprinter aiming for national championship qualification.',
-                image: '/api/placeholder/250/200'
-            },
-            {
-                name: 'Mohammed Rizwan',
-                sport: 'Boxing',
-                location: 'Kerala',
-                story: 'Young boxing prodigy needs support for international tournament preparation.',
-                image: '/api/placeholder/250/200'
-            }
-        ];
-
-        // Populate athletes section
-        function populateAthletes() {
-            const athletesGrid = document.querySelector('.athletes-grid');
-            athletes.forEach(athlete => {
-                const card = document.createElement('div');
-                card.className = 'athlete-card animate-fade-in';
-                card.innerHTML = `
-                    <img src="${athlete.image}" alt="${athlete.name}" class="athlete-img">
-                    <div class="athlete-info">
-                        <h3>${athlete.name}</h3>
-                        <p><strong>${athlete.sport}</strong> | ${athlete.location}</p>
-                        <p>${athlete.story}</p>
-                        <button class="btn btn-primary">Support Now</button>
-                    </div>
-                `;
-                athletesGrid.appendChild(card);
-            });
-        }
-
-        // Modal functionality
-        function openLoginModal() {
-            document.getElementById('loginModal').style.display = 'block';
-        }
-
-        function openRegisterModal() {
-            document.getElementById('registerModal').style.display = 'block';
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-        }
-
-        // Form handlers
-        function handleLogin(event) {
-            event.preventDefault();
-            const form = event.target;
-            const email = form.querySelector('input[type="email"]').value;
-            const password = form.querySelector('input[type="password"]').value;
+        // Particle animation for background
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
             
-            // Add login logic here
-            console.log('Login attempt:', { email, password });
-            closeModal('loginModal');
-        }
-
-        function handleRegister(event) {
-            event.preventDefault();
-            const form = event.target;
-            const name = form.querySelector('input[type="text"]').value;
-            const email = form.querySelector('input[type="email"]').value;
-            const password = form.querySelector('input[type="password"]').value;
-            const accountType = form.querySelector('select').value;
-            
-            // Add registration logic here
-            console.log('Registration:', { name, email, password, accountType });
-            closeModal('registerModal');
-        }
-
-        // Scroll animations
-        function handleScrollAnimations() {
-            const elements = document.querySelectorAll('.animate-fade-in');
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementBottom = element.getBoundingClientRect().bottom;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = Math.random() * 10 + 5 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.backgroundColor = getRandomColor(0.2);
+                particle.style.borderRadius = '50%';
+                particle.style.top = Math.random() * 100 + 'vh';
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.pointerEvents = 'none';
                 
-                if (elementTop < window.innerHeight && elementBottom > 0) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
+                // Different animations for each particle
+                particle.style.animation = `float ${Math.random() * 15 + 10}s linear infinite`;
+                
+                // Create keyframes for this particle
+                const keyframes = `
+                @keyframes float {
+                    0% { transform: translate(0, 0) rotate(0deg); }
+                    25% { transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(${Math.random() * 360}deg); }
+                    50% { transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(${Math.random() * 360}deg); }
+                    75% { transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(${Math.random() * 360}deg); }
+                    100% { transform: translate(0, 0) rotate(0deg); }
+                }`;
+                
+                // Add the keyframes to the document
+                const style = document.createElement('style');
+                style.innerHTML = keyframes;
+                document.head.appendChild(style);
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        function getRandomColor(opacity) {
+            const colors = [
+                `rgba(52, 152, 219, ${opacity})`, // blue
+                `rgba(46, 204, 113, ${opacity})`, // green
+                `rgba(155, 89, 182, ${opacity})`, // purple
+                `rgba(241, 196, 15, ${opacity})`, // yellow
+                `rgba(231, 76, 60, ${opacity})` // red
+            ];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+        
+        // Fade in elements as they enter viewport
+        function handleScrollAnimation() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = "1";
+                    element.style.transform = "translateY(0)";
                 }
             });
         }
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            populateAthletes();
-            window.addEventListener('scroll', handleScrollAnimations);
-            handleScrollAnimations(); // Initial check
-        });
-
-        // Close modals when clicking outside
-        window.onclick = function(event) {
-            if (event.target.className === 'modal') {
-                event.target.style.display = 'none';
+        
+        // Countdown visualization
+        function startCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            const messages = [
+                "Trust Your Knowledge!",
+                "Stay Calm, You've Got This!",
+                "Focus on One Question at a Time",
+                "Believe in Your Preparation!",
+                "Visualize Your Success!"
+            ];
+            
+            let currentIndex = 0;
+            
+            function updateMessage() {
+                countdownElement.textContent = messages[currentIndex];
+                countdownElement.style.color = getRandomColor(1).replace(/[^,]+(?=\))/, "1");
+                currentIndex = (currentIndex + 1) % messages.length;
             }
+            
+            updateMessage();
+            setInterval(updateMessage, 4000);
         }
-
-        // Add smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Form validation
-        const forms = document.querySelectorAll('form');
-        forms.forEach(form => {
-            form.addEventListener('submit', function(event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault();
-                    event.stopPropagation();
+        
+        // Modal functions
+        function setupModal() {
+            const modal = document.getElementById('tipModal');
+            const btn = document.getElementById('tipButton');
+            const closeBtn = document.getElementById('closeModal');
+            
+            btn.onclick = function() {
+                modal.style.display = "flex";
+            }
+            
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+            
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
                 }
-                form.classList.add('was-validated');
-            });
-        });
-
-        // Add loading states to buttons
-        const buttons = document.querySelectorAll('.btn');
-        buttons.forEach(button => {
-            button.addEventListener('click', function() {
-                if (this.classList.contains('loading')) return;
-                
-                const originalText = this.textContent;
-                this.classList.add('loading');
-                this.textContent = 'Loading...';
-                
-                setTimeout(() => {
-                    this.classList.remove('loading');
-                    this.textContent = originalText;
-                }, 1500);
-            });
-        });
-
-        // Add mobile menu toggle
-        const mobileMenuButton = document.createElement('button');
-        mobileMenuButton.className = 'mobile-menu-button';
-        mobileMenuButton.innerHTML = '☰';
-        document.querySelector('.nav-content').prepend(mobileMenuButton);
-
-        mobileMenuButton.addEventListener('click', () => {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        });
-
-        // Add search functionality
-        function searchAthletes(query) {
-            const filteredAthletes = athletes.filter(athlete => 
-                athlete.name.toLowerCase().includes(query.toLowerCase()) ||
-                athlete.sport.toLowerCase().includes(query.toLowerCase()) ||
-                athlete.location.toLowerCase().includes(query.toLowerCase())
-            );
-            
-            const athletesGrid = document.querySelector('.athletes-grid');
-            athletesGrid.innerHTML = '';
-            
-            if (filteredAthletes.length === 0) {
-                athletesGrid.innerHTML = '<p>No athletes found matching your search.</p>';
-                return;
             }
-            
-            filteredAthletes.forEach(athlete => {
-                // Reuse athlete card creation logic
-                const card = document.createElement('div');
-                card.className = 'athlete-card animate-fade-in';
-                card.innerHTML = `
-                    <img src="${athlete.image}" alt="${athlete.name}" class="athlete-img">
-                    <div class="athlete-info">
-                        <h3>${athlete.name}</h3>
-                        <p><strong>${athlete.sport}</strong> | ${athlete.location}</p>
-                        <p>${athlete.story}</p>
-                        <button class="btn btn-primary">Support Now</button>
-                    </div>
-                `;
-                athletesGrid.appendChild(card);
-            });
         }
-
-        // Add error handling
-        window.onerror = function(msg, url, lineNo, columnNo, error) {
-            console.error('Error: ', msg, '\nURL: ', url, '\nLine: ', lineNo, '\nColumn: ', columnNo, '\nError object: ', error);
-            return false;
+        
+        // Initialize everything when the page loads
+        window.onload = function() {
+            createParticles();
+            handleScrollAnimation(); // Initial check for elements in viewport
+            startCountdown();
+            setupModal();
+            
+            // Check for scroll animations when scrolling
+            window.addEventListener('scroll', handleScrollAnimation);
         };
-
-        // Add progress tracking (mock functionality)
-        class ProgressTracker {
-            constructor(athleteId) {
-                this.athleteId = athleteId;
-                this.milestones = [];
-            }
-
-            addMilestone(milestone) {
-                this.milestones.push({
-                    ...milestone,
-                    date: new Date(),
-                    completed: false
-                });
-            }
-
-            completeMilestone(index) {
-                if (this.milestones[index]) {
-                    this.milestones[index].completed = true;
-                }
-            }
-
-            getProgress() {
-                const completed = this.milestones.filter(m => m.completed).length;
-                return (completed / this.milestones.length) * 100;
-            }
-        }
-
-        // Add notification system
-        class NotificationSystem {
-            constructor() {
-                this.notifications = [];
-                this.container = document.createElement('div');
-                this.container.className = 'notification-container';
-                document.body.appendChild(this.container);
-            }
-
-            show(message, type = 'info') {
-                const notification = document.createElement('div');
-                notification.className = `notification ${type}`;
-                notification.textContent = message;
-                
-                this.container.appendChild(notification);
-                
-                setTimeout(() => {
-                    notification.remove();
-                }, 3000);
-            }
-        }
-
-        const notifications = new NotificationSystem();
-
-        // Initialize the application
-        function initializeApp() {
-            populateAthletes();
-            handleScrollAnimations();
-            
-            // Add notification test
-            setTimeout(() => {
-                notifications.show('Welcome to AthleteLift! 🎉', 'success');
-            }, 1000);
-        }
-
-        initializeApp();
     </script>
 </body>
 </html>

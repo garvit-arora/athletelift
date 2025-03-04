@@ -3,393 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physics Exam Success Wishes</title>
+    <title>Good Luck: Data Science Exam</title>
     <style>
         :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
+            --primary: #6c5ce7;
+            --secondary: #00cec9;
+            --dark: #2d3436;
+            --light: #f5f6fa;
+            --accent: #fd79a8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f6fa;
-            overflow-x: hidden;
+            background-color: var(--dark);
+            color: var(--light);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
         
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            max-width: 700px;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
         }
         
         header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
             text-align: center;
-            padding: 30px 0;
-            border-radius: 0 0 30px 30px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
         }
         
         h1 {
-            font-size: 2.5rem;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
         .subtitle {
-            font-size: 1.2rem;
-            margin-top: 10px;
-            opacity: 0.9;
-        }
-        
-        .main-content {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            position: relative;
+            font-size: 1.4rem;
+            color: var(--accent);
+            margin-bottom: 2rem;
         }
         
         .card {
-            background: var(--light-color);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
         }
         
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
         }
         
-        .card h2 {
-            color: var(--primary-color);
-            margin-top: 0;
-        }
-        
-        .quote-section {
+        .motivational-quote {
             font-style: italic;
-            font-size: 1.1rem;
-            color: var(--dark-color);
-            margin: 30px 0;
             text-align: center;
-            padding: 0 20px;
-        }
-        
-        .floating-particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-        
-        .countdown {
-            font-size: 1.5rem;
-            text-align: center;
-            color: var(--dark-color);
-            margin: 30px 0;
-            font-weight: bold;
-        }
-        
-        .physics-icon {
-            display: inline-block;
-            margin: 0 5px;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+            font-size: 1.4rem;
+            padding: 1rem;
+            color: var(--secondary);
         }
         
         button {
-            background: var(--primary-color);
-            color: white;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
             border: none;
-            padding: 12px 25px;
-            border-radius: 30px;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
             font-size: 1rem;
             cursor: pointer;
+            transition: all 0.3s ease;
             display: block;
-            margin: 30px auto;
-            transition: all 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 2rem auto;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
         }
         
         button:hover {
-            background: var(--secondary-color);
             transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 7px 20px rgba(108, 92, 231, 0.6);
         }
         
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            color: var(--dark-color);
-            font-size: 0.9rem;
-        }
-        
-        .modal {
-            display: none;
-            position: fixed;
+        .data-particles {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 10;
-            justify-content: center;
-            align-items: center;
+            z-index: 0;
+            pointer-events: none;
         }
         
-        .modal-content {
-            background-color: white;
-            padding: 30px;
-            border-radius: 15px;
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            animation: modalOpen 0.4s forwards;
-        }
-        
-        @keyframes modalOpen {
-            from { opacity: 0; transform: translateY(-50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .close-modal {
+        .particle {
             position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--accent-color);
+            width: 6px;
+            height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.3;
         }
         
-        .success-tips {
-            list-style-type: none;
-            padding: 0;
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0); }
         }
         
-        .success-tips li {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
+        .floating-icon {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.6;
+            animation: float 6s ease-in-out infinite;
+            z-index: -1;
         }
         
-        .success-tips li:last-child {
-            border-bottom: none;
+        .icon-1 {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
         }
         
-        /* Animation for the elements */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s, transform 0.8s;
+        .icon-2 {
+            top: 30%;
+            right: 15%;
+            animation-delay: 2s;
         }
         
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            .container {
-                padding: 10px;
-            }
-            .main-content {
-                padding: 20px;
-            }
+        .icon-3 {
+            bottom: 10%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        .icon-4 {
+            bottom: 20%;
+            right: 10%;
+            animation-delay: 3s;
+        }
+        
+        .glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(108, 92, 231, 0.3) 0%, rgba(0, 206, 201, 0.1) 50%, rgba(0, 0, 0, 0) 70%);
+            z-index: -1;
+            border-radius: 50%;
         }
     </style>
 </head>
 <body>
-    <div class="floating-particles" id="particles"></div>
-    
-    <header>
-        <h1>Physics Exam Success Wishes</h1>
-        <p class="subtitle">You've got this! Believe in yourself!</p>
-    </header>
+    <div class="data-particles" id="particles"></div>
+    <div class="glow"></div>
     
     <div class="container">
-        <div class="main-content fade-in">
-            <div class="countdown" id="countdown">Countdown to Success</div>
-            
-            <div class="card fade-in">
-                <h2><span class="physics-icon">⚛️</span> Believe in Your Potential</h2>
-                <p>Hey! Just wanted to let you know that you're going to absolutely crush this physics exam! You've been working so hard, and all that dedication is about to pay off. Remember that you know more than you think you do. Take a deep breath, stay focused, and show that exam who's boss!</p>
+        <header>
+            <h1>You've Got This!</h1>
+            <div class="subtitle">Data Science Exam</div>
+        </header>
+        
+        <div class="card">
+            <div class="motivational-quote">
+                "In data science, as in life, the most valuable answers come from asking the right questions."
             </div>
-            
-            <div class="quote-section fade-in">
-                "The most beautiful thing we can experience is the mysterious. It is the source of all true art and science." - Albert Einstein
-            </div>
-            
-            <div class="card fade-in">
-                <h2><span class="physics-icon">🔬</span> You're Fully Prepared</h2>
-                <p>All those hours of studying, all those practice problems you've solved, all those concepts you've mastered - they're all coming together now. Physics might be challenging, but so are you! Your determination and intelligence will guide you through every question. I'm sending all my positive energy your way!</p>
-            </div>
-            
-            <div class="card fade-in">
-                <h2><span class="physics-icon">💡</span> One Step at a Time</h2>
-                <p>Remember to approach each problem methodically. Read carefully, identify the key concepts, draw diagrams when needed, and trust your knowledge. Don't rush - you've got this! And remember that one difficult question doesn't define your entire exam. Move on and come back to it later if needed.</p>
-            </div>
-            
-            <button id="tipButton" class="fade-in">Click for Success Tips</button>
+            <p>Trust your preparation. You're ready for this!</p>
         </div>
         
-        <div class="modal" id="tipModal">
-            <div class="modal-content">
-                <span class="close-modal" id="closeModal">&times;</span>
-                <h2>Physics Exam Success Tips</h2>
-                <ul class="success-tips">
-                    <li>Start with questions you're confident about to build momentum</li>
-                    <li>Draw diagrams for mechanics and wave problems</li>
-                    <li>Write down the given quantities and what you're solving for</li>
-                    <li>Check your units throughout calculations</li>
-                    <li>If stuck, try working backward from the answer choices</li>
-                    <li>Take deep breaths if you feel anxious during the exam</li>
-                    <li>Review your answers if you have time at the end</li>
-                    <li>Trust your preparation - you've worked hard for this!</li>
-                </ul>
-                <p style="margin-top: 20px;">I believe in you 100000%! You're going to do amazing!</p>
-            </div>
-        </div>
+        <button id="positivity-btn">Need a Boost?</button>
         
-        <footer class="fade-in">
-            Sending you all the positive energy for your physics exam!
-        </footer>
+        <div class="floating-icon icon-1">📊</div>
+        <div class="floating-icon icon-2">🧠</div>
+        <div class="floating-icon icon-3">💻</div>
+        <div class="floating-icon icon-4">📈</div>
     </div>
     
     <script>
-        // Particle animation for background
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 50;
+        // Create floating data particles
+        const particlesContainer = document.getElementById('particles');
+        const numParticles = 50;
+        
+        for(let i = 0; i < numParticles; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
             
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.style.position = 'absolute';
-                particle.style.width = Math.random() * 10 + 5 + 'px';
-                particle.style.height = particle.style.width;
-                particle.style.backgroundColor = getRandomColor(0.2);
-                particle.style.borderRadius = '50%';
-                particle.style.top = Math.random() * 100 + 'vh';
-                particle.style.left = Math.random() * 100 + 'vw';
-                particle.style.pointerEvents = 'none';
-                
-                // Different animations for each particle
-                particle.style.animation = `float ${Math.random() * 15 + 10}s linear infinite`;
-                
-                // Create keyframes for this particle
-                const keyframes = `
-                @keyframes float {
-                    0% { transform: translate(0, 0) rotate(0deg); }
-                    25% { transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(${Math.random() * 360}deg); }
-                    50% { transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(${Math.random() * 360}deg); }
-                    75% { transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(${Math.random() * 360}deg); }
-                    100% { transform: translate(0, 0) rotate(0deg); }
-                }`;
-                
-                // Add the keyframes to the document
-                const style = document.createElement('style');
-                style.innerHTML = keyframes;
-                document.head.appendChild(style);
-                
-                particlesContainer.appendChild(particle);
-            }
+            // Random position
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            
+            // Random size
+            const size = Math.random() * 4 + 2;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            
+            // Random opacity
+            particle.style.opacity = Math.random() * 0.5 + 0.1;
+            
+            particlesContainer.appendChild(particle);
+            
+            // Animate particles
+            animateParticle(particle);
         }
         
-        function getRandomColor(opacity) {
-            const colors = [
-                `rgba(52, 152, 219, ${opacity})`, // blue
-                `rgba(46, 204, 113, ${opacity})`, // green
-                `rgba(155, 89, 182, ${opacity})`, // purple
-                `rgba(241, 196, 15, ${opacity})`, // yellow
-                `rgba(231, 76, 60, ${opacity})` // red
-            ];
-            return colors[Math.floor(Math.random() * colors.length)];
-        }
-        
-        // Fade in elements as they enter viewport
-        function handleScrollAnimation() {
-            const fadeElements = document.querySelectorAll('.fade-in');
-            fadeElements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
+        function animateParticle(particle) {
+            const duration = Math.random() * 50 + 30;
+            const xDistance = Math.random() * 100 - 50;
+            const yDistance = Math.random() * 100 - 50;
+            
+            particle.style.transition = `transform ${duration}s linear, opacity 10s ease-in-out`;
+            particle.style.transform = `translate(${xDistance}vw, ${yDistance}vh)`;
+            
+            // Reset particles when animation ends
+            setTimeout(() => {
+                particle.style.transition = 'none';
+                particle.style.transform = 'translate(0, 0)';
                 
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = "1";
-                    element.style.transform = "translateY(0)";
-                }
-            });
+                setTimeout(() => {
+                    animateParticle(particle);
+                }, 100);
+            }, duration * 1000);
         }
         
-        // Countdown visualization
-        function startCountdown() {
-            const countdownElement = document.getElementById('countdown');
-            const messages = [
-                "Trust Your Knowledge!",
-                "Stay Calm, You've Got This!",
-                "Focus on One Question at a Time",
-                "Believe in Your Preparation!",
-                "Visualize Your Success!"
-            ];
-            
-            let currentIndex = 0;
-            
-            function updateMessage() {
-                countdownElement.textContent = messages[currentIndex];
-                countdownElement.style.color = getRandomColor(1).replace(/[^,]+(?=\))/, "1");
-                currentIndex = (currentIndex + 1) % messages.length;
-            }
-            
-            updateMessage();
-            setInterval(updateMessage, 4000);
-        }
+        // Motivational messages array
+        const motivationalMessages = [
+            "You are brilliantly prepared for this!",
+            "Your hard work is about to pay off!",
+            "You've got this - believe in yourself!",
+            "Stay calm and trust your knowledge!",
+            "You're about to rock this data science exam!"
+        ];
         
-        // Modal functions
-        function setupModal() {
-            const modal = document.getElementById('tipModal');
-            const btn = document.getElementById('tipButton');
-            const closeBtn = document.getElementById('closeModal');
-            
-            btn.onclick = function() {
-                modal.style.display = "flex";
-            }
-            
-            closeBtn.onclick = function() {
-                modal.style.display = "none";
-            }
-            
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        }
-        
-        // Initialize everything when the page loads
-        window.onload = function() {
-            createParticles();
-            handleScrollAnimation(); // Initial check for elements in viewport
-            startCountdown();
-            setupModal();
-            
-            // Check for scroll animations when scrolling
-            window.addEventListener('scroll', handleScrollAnimation);
-        };
+        // Random motivational message button
+        const positivityBtn = document.getElementById('positivity-btn');
+        positivityBtn.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * motivationalMessages.length);
+            alert(motivationalMessages[randomIndex]);
+        });
     </script>
 </body>
 </html>

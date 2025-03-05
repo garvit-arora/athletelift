@@ -3,260 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Good Luck: Data Science Exam</title>
+    <title>Best Wishes for Personality Development & Communication Skills Exam</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <style>
-        :root {
-            --primary: #6c5ce7;
-            --secondary: #00cec9;
-            --dark: #2d3436;
-            --light: #f5f6fa;
-            --accent: #fd79a8;
+        @keyframes confetti {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: var(--dark);
-            color: var(--light);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        
-        .container {
-            max-width: 700px;
-            padding: 2rem;
-            position: relative;
-            z-index: 10;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .subtitle {
-            font-size: 1.4rem;
-            color: var(--accent);
-            margin-bottom: 2rem;
-        }
-        
-        .card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-        }
-        
-        .motivational-quote {
-            font-style: italic;
-            text-align: center;
-            font-size: 1.4rem;
-            padding: 1rem;
-            color: var(--secondary);
-        }
-        
-        button {
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            border: none;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: block;
-            margin: 2rem auto;
-            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
-        }
-        
-        button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 7px 20px rgba(108, 92, 231, 0.6);
-        }
-        
-        .data-particles {
+
+        .confetti {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
-        
-        .particle {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: var(--primary);
-            border-radius: 50%;
-            opacity: 0.3;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-            100% { transform: translateY(0) rotate(0); }
-        }
-        
-        .floating-icon {
-            position: absolute;
-            font-size: 3rem;
-            opacity: 0.6;
-            animation: float 6s ease-in-out infinite;
-            z-index: -1;
-        }
-        
-        .icon-1 {
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-        
-        .icon-2 {
-            top: 30%;
-            right: 15%;
-            animation-delay: 2s;
-        }
-        
-        .icon-3 {
-            bottom: 10%;
-            left: 20%;
-            animation-delay: 4s;
-        }
-        
-        .icon-4 {
-            bottom: 20%;
-            right: 10%;
-            animation-delay: 3s;
-        }
-        
-        .glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(108, 92, 231, 0.3) 0%, rgba(0, 206, 201, 0.1) 50%, rgba(0, 0, 0, 0) 70%);
-            z-index: -1;
-            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+            background-color: transparent;
+            opacity: 0.7;
+            animation: confetti 3s linear infinite;
         }
     </style>
 </head>
-<body>
-    <div class="data-particles" id="particles"></div>
-    <div class="glow"></div>
-    
-    <div class="container">
-        <header>
-            <h1>You've Got This!</h1>
-            <div class="subtitle">Data Science Exam</div>
-        </header>
+<body class="bg-gradient-to-r from-purple-500 to-pink-500 min-h-screen flex items-center justify-center">
+    <div class="confetti-container absolute inset-0 overflow-hidden pointer-events-none">
+        <!-- Confetti elements will be dynamically added here -->
+    </div>
+
+    <div class="bg-white p-10 rounded-xl shadow-2xl text-center max-w-2xl mx-auto relative z-10">
+        <h1 class="text-4xl font-bold mb-6 text-purple-700">Best Wishes for Your Exam!</h1>
         
-        <div class="card">
-            <div class="motivational-quote">
-                "In data science, as in life, the most valuable answers come from asking the right questions."
+        <div class="mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Personality Development & Communication Skills Exam</h2>
+            
+            <div class="bg-purple-50 p-6 rounded-lg">
+                <p class="text-xl text-gray-700 mb-4">
+                    Believe in yourself and your abilities. You've prepared well, and now it's time to shine!
+                </p>
+                
+                <ul class="space-y-3 text-gray-600 text-lg mb-6">
+                    <li>✨ Stay calm and confident</li>
+                    <li>🧠 Trust your knowledge and preparation</li>
+                    <li>🌟 Showcase your unique personality</li>
+                    <li>💡 Read questions carefully</li>
+                    <li>⏰ Manage your time wisely</li>
+                </ul>
             </div>
-            <p>Trust your preparation. You're ready for this!</p>
         </div>
         
-        <button id="positivity-btn">Need a Boost?</button>
-        
-        <div class="floating-icon icon-1">📊</div>
-        <div class="floating-icon icon-2">🧠</div>
-        <div class="floating-icon icon-3">💻</div>
-        <div class="floating-icon icon-4">📈</div>
+        <div class="mt-8">
+            <p class="text-2xl font-bold text-pink-600">You've Got This! 💪</p>
+            <p class="text-lg text-gray-600 mt-2">Wishing you the very best of luck in your exam!</p>
+        </div>
     </div>
-    
+
     <script>
-        // Create floating data particles
-        const particlesContainer = document.getElementById('particles');
-        const numParticles = 50;
-        
-        for(let i = 0; i < numParticles; i++) {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            
-            // Random position
-            particle.style.left = `${Math.random() * 100}%`;
-            particle.style.top = `${Math.random() * 100}%`;
-            
-            // Random size
-            const size = Math.random() * 4 + 2;
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
-            
-            // Random opacity
-            particle.style.opacity = Math.random() * 0.5 + 0.1;
-            
-            particlesContainer.appendChild(particle);
-            
-            // Animate particles
-            animateParticle(particle);
-        }
-        
-        function animateParticle(particle) {
-            const duration = Math.random() * 50 + 30;
-            const xDistance = Math.random() * 100 - 50;
-            const yDistance = Math.random() * 100 - 50;
-            
-            particle.style.transition = `transform ${duration}s linear, opacity 10s ease-in-out`;
-            particle.style.transform = `translate(${xDistance}vw, ${yDistance}vh)`;
-            
-            // Reset particles when animation ends
-            setTimeout(() => {
-                particle.style.transition = 'none';
-                particle.style.transform = 'translate(0, 0)';
+        function createConfetti() {
+            const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#FDCB6E', '#6C5CE7'];
+            const container = document.querySelector('.confetti-container');
+
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
                 
-                setTimeout(() => {
-                    animateParticle(particle);
-                }, 100);
-            }, duration * 1000);
+                // Random positioning
+                confetti.style.left = `${Math.random() * 100}%`;
+                confetti.style.animationDelay = `${Math.random() * 3}s`;
+                
+                // Random rotation and color
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+                container.appendChild(confetti);
+            }
         }
-        
-        // Motivational messages array
-        const motivationalMessages = [
-            "You are brilliantly prepared for this!",
-            "Your hard work is about to pay off!",
-            "You've got this - believe in yourself!",
-            "Stay calm and trust your knowledge!",
-            "You're about to rock this data science exam!"
-        ];
-        
-        // Random motivational message button
-        const positivityBtn = document.getElementById('positivity-btn');
-        positivityBtn.addEventListener('click', () => {
-            const randomIndex = Math.floor(Math.random() * motivationalMessages.length);
-            alert(motivationalMessages[randomIndex]);
-        });
+
+        // Create confetti when page loads
+        createConfetti();
     </script>
 </body>
 </html>
